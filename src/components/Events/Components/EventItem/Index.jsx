@@ -1,6 +1,11 @@
-const EventItem = () => {
+const EventItem = ({info, name, image}) => {
+
     return(
-        <div>Event Iteam</div>
+        <div>
+            <h4>{name}</h4>
+            <p>{info}</p>
+            <img src={image} alt={name}/>
+        </div>
     );
 };
 
