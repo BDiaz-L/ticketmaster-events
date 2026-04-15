@@ -5,6 +5,10 @@ import data from "../../data/events.json"
 const events = data._embedded.events;
 
 const Events = () => {
+
+    const handleEventClick = (id) => {
+        console.log('Evento clicleado: '+ id);
+    };
     
     const eventsComponent = events.map((event)=> (
         <EventItem
@@ -12,6 +16,8 @@ const Events = () => {
             info={event.info}
             name={event.name}
             image={event.images[0].url}
+            id={event.id}
+            onEventClick={handleEventClick}
         />
 
     ));
