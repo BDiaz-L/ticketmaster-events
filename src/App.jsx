@@ -14,7 +14,7 @@ function App() {
   return (
     <>
      <Navbar onSearch={handleNavbarSearch}/>
-     <Events/>
+     <Events searchTerm={searchValue}/>
     </>
   )
 }
