@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Navbar = ({}) => {
+const Navbar = ({onSearch}) => {
 
     const [search, setSearch] = useState('');
 
@@ -11,6 +11,7 @@ const Navbar = ({}) => {
     const handleInputKeyDown = (e) => {
         if (e.key === 'Enter') {
             setSearch(e.key)
+            onSearch(search);
         }
     };
 

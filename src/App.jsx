@@ -1,14 +1,19 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Events from './components/Events';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [searchValue, setSearchValue] = useState('');
+
+  const handleNavbarSearch = (value) => {
+    setSearchValue(value);
+  };
+
 
   return (
     <>
-     <Navbar/>
+     <Navbar onSearch={handleNavbarSearch}/>
      <Events/>
     </>
   )
