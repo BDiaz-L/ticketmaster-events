@@ -8,28 +8,45 @@ const SignUpForm =  () => {
     const [zipcode, setZipcode] = useState('');
     const [phone, setPhone] = useState('');
 
+    const handleClearClick = () => {
+        console.log('Clear');
+    };
+
+    const handleSubmitForm = () => {
+        console.log('Submit');
+    };
+
     return (
-        <form >
+        <form onSubmit={handleSubmitForm}>
             <label>
                 Name
-                <Input value={name} onChange={(e) => {setName(e)}} />
+                <input value={name} onChange={(e) => {setName(e.target.value)}} />
             </label>
+            <br />
             <label>
                 Age
-                <Input value={age} onChange={(e) => {setAge(e)}} />
+                <input value={age} onChange={(e) => {setAge(e.target.value)}} />
             </label>
+            <br />
             <label>
                 Address
-                <Input value={address} onChange={(e) => {setAddress(e)}} />
+                <input value={address} onChange={(e) => {setAddress(e.target.value)}} />
             </label>
+            <br />
             <label>
                 ZipCode
-                <Input value={zipcode} onChange={(e) => {setZipcode(e)}} />
+                <input value={zipcode} onChange={(e) => {setZipcode(e.target.value)}} />
             </label>
+            <br />
             <label>
                 Phone
-                <Input value={phone} onChange={(e) => {setPhone(e)}} />
+                <input value={phone} onChange={(e) => {setPhone(e.target.value)}} />
             </label>
+            <br />
+            <div>
+                <button type="button" onClick={handleClearClick}>Clear</button>
+                <button type="submit">Submit</button>
+            </div>
         </form>
     );
 };
