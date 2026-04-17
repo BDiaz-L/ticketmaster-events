@@ -9,38 +9,50 @@ const SignUpForm =  () => {
     const [phone, setPhone] = useState('');
 
     const handleClearClick = () => {
-        console.log('Clear');
+        setName('');
+        setAge('');
+        setAddress('');
+        setZipcode('');
+        setPhone('');
+        
     };
 
-    const handleSubmitForm = () => {
-        console.log('Submit');
+    const handleSubmitForm = (e) => {
+        e.preventDefault();
+        console.log('Submit', {
+            name,
+            age,
+            address,
+            zipcode,
+            phone
+        });
     };
 
     return (
         <form onSubmit={handleSubmitForm}>
             <label>
                 Name
-                <input value={name} onChange={(e) => {setName(e.target.value)}} />
+                <input value={name} onChange={(e) => {setName(e.target.value)}} required/>
             </label>
             <br />
             <label>
                 Age
-                <input value={age} onChange={(e) => {setAge(e.target.value)}} />
+                <input value={age} onChange={(e) => {setAge(e.target.value)}} required/>
             </label>
             <br />
             <label>
                 Address
-                <input value={address} onChange={(e) => {setAddress(e.target.value)}} />
+                <input value={address} onChange={(e) => {setAddress(e.target.value)}} required/>
             </label>
             <br />
             <label>
                 ZipCode
-                <input value={zipcode} onChange={(e) => {setZipcode(e.target.value)}} />
+                <input value={zipcode} onChange={(e) => {setZipcode(e.target.value)}}required />
             </label>
             <br />
             <label>
                 Phone
-                <input value={phone} onChange={(e) => {setPhone(e.target.value)}} />
+                <input value={phone} onChange={(e) => {setPhone(e.target.value)}} required/>
             </label>
             <br />
             <div>
